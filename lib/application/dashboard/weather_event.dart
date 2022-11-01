@@ -6,4 +6,5 @@ class WeatherEvent with _$WeatherEvent {
   const factory WeatherEvent.cityNameChanged(String cityNameStr) =
       _CityNameChanged;
   const factory WeatherEvent.searchOnCLick() = _SearchOnCLick;
+  const factory WeatherEvent.authCheck() = _AuthCheck;
 }

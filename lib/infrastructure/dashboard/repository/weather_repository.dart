@@ -9,8 +9,8 @@ import 'package:weather_ddd_app/domain/dashboard/value/value_objects.dart';
 import 'package:weather_ddd_app/infrastructure/dashboard/datasource/weather_remote.dart';
 
 class WeatherRepository implements IDashRepository {
-    final WeatherRemoteDataSource weatherRemoteDataSource;
-    WeatherRepository({
+  final WeatherRemoteDataSource weatherRemoteDataSource;
+  WeatherRepository({
     required this.weatherRemoteDataSource,
   });
 
@@ -26,7 +26,6 @@ class WeatherRepository implements IDashRepository {
   @override
   Future<Either<ApiFailure, Unit>> storeWeather(
       {required StoreWeather weather}) {
-    // TODO: implement storeWeather
     throw UnimplementedError();
   }
 
@@ -35,10 +34,10 @@ class WeatherRepository implements IDashRepository {
       {required City city}) async {
     final cityNameStr = city.getOrCrash();
     try {
-      print("vivek - ${cityNameStr.toString()}");
+      // print("vivek - ${cityNameStr.toString()}");
       final getWeatherData =
           await weatherRemoteDataSource.getWeatherOfCity(cityName: cityNameStr);
-      print("sitabra" + '-' + getWeatherData.toString());
+      // print("vivek 2" + '-' + getWeatherData.toString());
 
       return Right(getWeatherData);
     } catch (e) {
@@ -48,7 +47,6 @@ class WeatherRepository implements IDashRepository {
 
   @override
   Future<Either<ApiFailure, Weather>> weather({required City city}) {
-    // TODO: implement weather
     throw UnimplementedError();
   }
 }

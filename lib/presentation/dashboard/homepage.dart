@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:weather_ddd_app/application/dashboard/weather_bloc.dart';
+import 'package:weather_ddd_app/domain/core/error/api_failures.dart';
 import 'package:weather_ddd_app/domain/dashboard/entities/fetched_weather.dart';
+import 'package:weather_ddd_app/presentation/core/snackbar.dart';
 
 var weatherData = {};
 
@@ -33,7 +35,7 @@ class _DashboardState extends State<Dashboard> {
             }, (a) {
               data = a.getOrElse(() => const FetchedWeather(data: {}));
               weatherData = data.data;
-              print("vivek kr - ${data.data.toString()}");
+              // print("vivek kr - ${data.data.toString()}");
             });
             return SizedBox(
               height: screenHeight,
@@ -326,7 +328,23 @@ class _ChangeCityState extends State<ChangeCity> {
         listenWhen: (previous, current) =>
             previous.authFailureOrSuccessOption !=
             current.authFailureOrSuccessOption,
-        listener: (context, state) {},
+        listener: (context, state) {
+          state.authFailureOrSuccessOption.fold(
+            () {},
+            (either) => either.fold(
+              (failure) {
+                final failureMessage = failure.failureMessage;
+                showSnackBar(
+                  context: context,
+                  message: failureMessage,
+                );
+              },
+              (_) {
+                context.read<WeatherBloc>().add(const WeatherEvent.authCheck());
+              },
+            ),
+          );
+        },
         buildWhen: (previous, current) =>
             previous.showErrorMessages != current.showErrorMessages,
         builder: (context, state) {

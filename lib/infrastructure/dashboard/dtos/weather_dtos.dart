@@ -9,6 +9,7 @@ class WeatherDto with _$WeatherDto {
   const WeatherDto._();
 
   const factory WeatherDto({
+    // ignore: invalid_annotation_target
     @JsonKey(name: 'data') required Map<String, dynamic> data,
   }) = _WeatherDto;
 

@@ -21,6 +21,7 @@ mixin _$WeatherEvent {
     required TResult Function() loadLastSavedCity,
     required TResult Function(String cityNameStr) cityNameChanged,
     required TResult Function() searchOnCLick,
+    required TResult Function() authCheck,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -28,6 +29,7 @@ mixin _$WeatherEvent {
     TResult Function()? loadLastSavedCity,
     TResult Function(String cityNameStr)? cityNameChanged,
     TResult Function()? searchOnCLick,
+    TResult Function()? authCheck,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -35,6 +37,7 @@ mixin _$WeatherEvent {
     TResult Function()? loadLastSavedCity,
     TResult Function(String cityNameStr)? cityNameChanged,
     TResult Function()? searchOnCLick,
+    TResult Function()? authCheck,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -43,6 +46,7 @@ mixin _$WeatherEvent {
     required TResult Function(_LoadLastSavedCity value) loadLastSavedCity,
     required TResult Function(_CityNameChanged value) cityNameChanged,
     required TResult Function(_SearchOnCLick value) searchOnCLick,
+    required TResult Function(_AuthCheck value) authCheck,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,6 +54,7 @@ mixin _$WeatherEvent {
     TResult Function(_LoadLastSavedCity value)? loadLastSavedCity,
     TResult Function(_CityNameChanged value)? cityNameChanged,
     TResult Function(_SearchOnCLick value)? searchOnCLick,
+    TResult Function(_AuthCheck value)? authCheck,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -57,6 +62,7 @@ mixin _$WeatherEvent {
     TResult Function(_LoadLastSavedCity value)? loadLastSavedCity,
     TResult Function(_CityNameChanged value)? cityNameChanged,
     TResult Function(_SearchOnCLick value)? searchOnCLick,
+    TResult Function(_AuthCheck value)? authCheck,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -122,6 +128,7 @@ class _$_LoadLastSavedCity implements _LoadLastSavedCity {
     required TResult Function() loadLastSavedCity,
     required TResult Function(String cityNameStr) cityNameChanged,
     required TResult Function() searchOnCLick,
+    required TResult Function() authCheck,
   }) {
     return loadLastSavedCity();
   }
@@ -132,6 +139,7 @@ class _$_LoadLastSavedCity implements _LoadLastSavedCity {
     TResult Function()? loadLastSavedCity,
     TResult Function(String cityNameStr)? cityNameChanged,
     TResult Function()? searchOnCLick,
+    TResult Function()? authCheck,
   }) {
     return loadLastSavedCity?.call();
   }
@@ -142,6 +150,7 @@ class _$_LoadLastSavedCity implements _LoadLastSavedCity {
     TResult Function()? loadLastSavedCity,
     TResult Function(String cityNameStr)? cityNameChanged,
     TResult Function()? searchOnCLick,
+    TResult Function()? authCheck,
     required TResult orElse(),
   }) {
     if (loadLastSavedCity != null) {
@@ -156,6 +165,7 @@ class _$_LoadLastSavedCity implements _LoadLastSavedCity {
     required TResult Function(_LoadLastSavedCity value) loadLastSavedCity,
     required TResult Function(_CityNameChanged value) cityNameChanged,
     required TResult Function(_SearchOnCLick value) searchOnCLick,
+    required TResult Function(_AuthCheck value) authCheck,
   }) {
     return loadLastSavedCity(this);
   }
@@ -166,6 +176,7 @@ class _$_LoadLastSavedCity implements _LoadLastSavedCity {
     TResult Function(_LoadLastSavedCity value)? loadLastSavedCity,
     TResult Function(_CityNameChanged value)? cityNameChanged,
     TResult Function(_SearchOnCLick value)? searchOnCLick,
+    TResult Function(_AuthCheck value)? authCheck,
   }) {
     return loadLastSavedCity?.call(this);
   }
@@ -176,6 +187,7 @@ class _$_LoadLastSavedCity implements _LoadLastSavedCity {
     TResult Function(_LoadLastSavedCity value)? loadLastSavedCity,
     TResult Function(_CityNameChanged value)? cityNameChanged,
     TResult Function(_SearchOnCLick value)? searchOnCLick,
+    TResult Function(_AuthCheck value)? authCheck,
     required TResult orElse(),
   }) {
     if (loadLastSavedCity != null) {
@@ -258,6 +270,7 @@ class _$_CityNameChanged implements _CityNameChanged {
     required TResult Function() loadLastSavedCity,
     required TResult Function(String cityNameStr) cityNameChanged,
     required TResult Function() searchOnCLick,
+    required TResult Function() authCheck,
   }) {
     return cityNameChanged(cityNameStr);
   }
@@ -268,6 +281,7 @@ class _$_CityNameChanged implements _CityNameChanged {
     TResult Function()? loadLastSavedCity,
     TResult Function(String cityNameStr)? cityNameChanged,
     TResult Function()? searchOnCLick,
+    TResult Function()? authCheck,
   }) {
     return cityNameChanged?.call(cityNameStr);
   }
@@ -278,6 +292,7 @@ class _$_CityNameChanged implements _CityNameChanged {
     TResult Function()? loadLastSavedCity,
     TResult Function(String cityNameStr)? cityNameChanged,
     TResult Function()? searchOnCLick,
+    TResult Function()? authCheck,
     required TResult orElse(),
   }) {
     if (cityNameChanged != null) {
@@ -292,6 +307,7 @@ class _$_CityNameChanged implements _CityNameChanged {
     required TResult Function(_LoadLastSavedCity value) loadLastSavedCity,
     required TResult Function(_CityNameChanged value) cityNameChanged,
     required TResult Function(_SearchOnCLick value) searchOnCLick,
+    required TResult Function(_AuthCheck value) authCheck,
   }) {
     return cityNameChanged(this);
   }
@@ -302,6 +318,7 @@ class _$_CityNameChanged implements _CityNameChanged {
     TResult Function(_LoadLastSavedCity value)? loadLastSavedCity,
     TResult Function(_CityNameChanged value)? cityNameChanged,
     TResult Function(_SearchOnCLick value)? searchOnCLick,
+    TResult Function(_AuthCheck value)? authCheck,
   }) {
     return cityNameChanged?.call(this);
   }
@@ -312,6 +329,7 @@ class _$_CityNameChanged implements _CityNameChanged {
     TResult Function(_LoadLastSavedCity value)? loadLastSavedCity,
     TResult Function(_CityNameChanged value)? cityNameChanged,
     TResult Function(_SearchOnCLick value)? searchOnCLick,
+    TResult Function(_AuthCheck value)? authCheck,
     required TResult orElse(),
   }) {
     if (cityNameChanged != null) {
@@ -374,6 +392,7 @@ class _$_SearchOnCLick implements _SearchOnCLick {
     required TResult Function() loadLastSavedCity,
     required TResult Function(String cityNameStr) cityNameChanged,
     required TResult Function() searchOnCLick,
+    required TResult Function() authCheck,
   }) {
     return searchOnCLick();
   }
@@ -384,6 +403,7 @@ class _$_SearchOnCLick implements _SearchOnCLick {
     TResult Function()? loadLastSavedCity,
     TResult Function(String cityNameStr)? cityNameChanged,
     TResult Function()? searchOnCLick,
+    TResult Function()? authCheck,
   }) {
     return searchOnCLick?.call();
   }
@@ -394,6 +414,7 @@ class _$_SearchOnCLick implements _SearchOnCLick {
     TResult Function()? loadLastSavedCity,
     TResult Function(String cityNameStr)? cityNameChanged,
     TResult Function()? searchOnCLick,
+    TResult Function()? authCheck,
     required TResult orElse(),
   }) {
     if (searchOnCLick != null) {
@@ -408,6 +429,7 @@ class _$_SearchOnCLick implements _SearchOnCLick {
     required TResult Function(_LoadLastSavedCity value) loadLastSavedCity,
     required TResult Function(_CityNameChanged value) cityNameChanged,
     required TResult Function(_SearchOnCLick value) searchOnCLick,
+    required TResult Function(_AuthCheck value) authCheck,
   }) {
     return searchOnCLick(this);
   }
@@ -418,6 +440,7 @@ class _$_SearchOnCLick implements _SearchOnCLick {
     TResult Function(_LoadLastSavedCity value)? loadLastSavedCity,
     TResult Function(_CityNameChanged value)? cityNameChanged,
     TResult Function(_SearchOnCLick value)? searchOnCLick,
+    TResult Function(_AuthCheck value)? authCheck,
   }) {
     return searchOnCLick?.call(this);
   }
@@ -428,6 +451,7 @@ class _$_SearchOnCLick implements _SearchOnCLick {
     TResult Function(_LoadLastSavedCity value)? loadLastSavedCity,
     TResult Function(_CityNameChanged value)? cityNameChanged,
     TResult Function(_SearchOnCLick value)? searchOnCLick,
+    TResult Function(_AuthCheck value)? authCheck,
     required TResult orElse(),
   }) {
     if (searchOnCLick != null) {
@@ -439,6 +463,122 @@ class _$_SearchOnCLick implements _SearchOnCLick {
 
 abstract class _SearchOnCLick implements WeatherEvent {
   const factory _SearchOnCLick() = _$_SearchOnCLick;
+}
+
+/// @nodoc
+abstract class _$$_AuthCheckCopyWith<$Res> {
+  factory _$$_AuthCheckCopyWith(
+          _$_AuthCheck value, $Res Function(_$_AuthCheck) then) =
+      __$$_AuthCheckCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_AuthCheckCopyWithImpl<$Res> extends _$WeatherEventCopyWithImpl<$Res>
+    implements _$$_AuthCheckCopyWith<$Res> {
+  __$$_AuthCheckCopyWithImpl(
+      _$_AuthCheck _value, $Res Function(_$_AuthCheck) _then)
+      : super(_value, (v) => _then(v as _$_AuthCheck));
+
+  @override
+  _$_AuthCheck get _value => super._value as _$_AuthCheck;
+}
+
+/// @nodoc
+
+class _$_AuthCheck implements _AuthCheck {
+  const _$_AuthCheck();
+
+  @override
+  String toString() {
+    return 'WeatherEvent.authCheck()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_AuthCheck);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() loadLastSavedCity,
+    required TResult Function(String cityNameStr) cityNameChanged,
+    required TResult Function() searchOnCLick,
+    required TResult Function() authCheck,
+  }) {
+    return authCheck();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? loadLastSavedCity,
+    TResult Function(String cityNameStr)? cityNameChanged,
+    TResult Function()? searchOnCLick,
+    TResult Function()? authCheck,
+  }) {
+    return authCheck?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loadLastSavedCity,
+    TResult Function(String cityNameStr)? cityNameChanged,
+    TResult Function()? searchOnCLick,
+    TResult Function()? authCheck,
+    required TResult orElse(),
+  }) {
+    if (authCheck != null) {
+      return authCheck();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_LoadLastSavedCity value) loadLastSavedCity,
+    required TResult Function(_CityNameChanged value) cityNameChanged,
+    required TResult Function(_SearchOnCLick value) searchOnCLick,
+    required TResult Function(_AuthCheck value) authCheck,
+  }) {
+    return authCheck(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_LoadLastSavedCity value)? loadLastSavedCity,
+    TResult Function(_CityNameChanged value)? cityNameChanged,
+    TResult Function(_SearchOnCLick value)? searchOnCLick,
+    TResult Function(_AuthCheck value)? authCheck,
+  }) {
+    return authCheck?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_LoadLastSavedCity value)? loadLastSavedCity,
+    TResult Function(_CityNameChanged value)? cityNameChanged,
+    TResult Function(_SearchOnCLick value)? searchOnCLick,
+    TResult Function(_AuthCheck value)? authCheck,
+    required TResult orElse(),
+  }) {
+    if (authCheck != null) {
+      return authCheck(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _AuthCheck implements WeatherEvent {
+  const factory _AuthCheck() = _$_AuthCheck;
 }
 
 /// @nodoc

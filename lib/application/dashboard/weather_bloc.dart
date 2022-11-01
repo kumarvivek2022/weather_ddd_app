@@ -22,41 +22,50 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
     WeatherEvent event,
     Emitter<WeatherState> emit,
   ) async {
-    await event.map(loadLastSavedCity: (e) async {
-      final failureOrSuccess = await dashRepository.loadCity();
-      await failureOrSuccess.fold((_) {}, (cityCred) async {
-        if (cityCred.city.isValid()) {
+    await event.map(
+        loadLastSavedCity: (e) async {
+          final failureOrSuccess = await dashRepository.loadCity();
+          await failureOrSuccess.fold((_) {}, (cityCred) async {
+            if (cityCred.city.isValid()) {
+              emit(state.copyWith(
+                city: cityCred.city,
+              ));
+            }
+          });
+        },
+        cityNameChanged: (e) {
           emit(state.copyWith(
-            city: cityCred.city,
+            city: City(e.cityNameStr),
+            authFailureOrSuccessOption: none(),
           ));
-        }
-      });
-    }, cityNameChanged: (e) {
-      emit(state.copyWith(
-        city: City(e.cityNameStr),
-        authFailureOrSuccessOption: none(),
-      ));
-    }, searchOnCLick: (e) async {
-      final isCityNameValid = state.city.isValid();
-      if (isCityNameValid) {
-        emit(state.copyWith(
-            isSubmitting: true, authFailureOrSuccessOption: none()));
+        },
+        searchOnCLick: (e) async {
+          final isCityNameValid = state.city.isValid();
+          if (isCityNameValid) {
+            emit(state.copyWith(
+                isSubmitting: true, authFailureOrSuccessOption: none()));
 
-        final failureOrSuccess =
-            await dashRepository.weatherData(city: state.city);
-        print("vivek - ${failureOrSuccess.toString()}");
-        failureOrSuccess.fold((_) {}, (weather) {
-          // dashRepository.storeWeather(weather: StoreWeather(weather.city));
-        });
+            final failureOrSuccess =
+                await dashRepository.weatherData(city: state.city);
+            //print("vivek - ${failureOrSuccess.toString()}");
+            failureOrSuccess.fold((_) {}, (weather) {
+              // dashRepository.storeWeather(weather: StoreWeather(weather.city));
+            });
 
-        emit(state.copyWith(
-          isSubmitting: false,
-          showErrorMessages: true,
-          authFailureOrSuccessOption: optionOf(failureOrSuccess),
-        ));
-      } else {
-        emit(state.copyWith(showErrorMessages: true));
-      }
-    });
+            emit(state.copyWith(
+              isSubmitting: false,
+              showErrorMessages: true,
+              authFailureOrSuccessOption: optionOf(failureOrSuccess),
+            ));
+          } else {
+            emit(state.copyWith(
+                showErrorMessages: true,
+                authFailureOrSuccessOption:
+                    optionOf(const Left(ApiFailure.cityNotFound()))));
+          }
+        },
+        authCheck: (_AuthCheck value) {});
   }
+
+  static initial() {}
 }

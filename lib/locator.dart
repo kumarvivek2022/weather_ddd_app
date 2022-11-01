@@ -3,7 +3,6 @@ import 'package:weather_ddd_app/application/dashboard/weather_bloc.dart';
 import 'package:weather_ddd_app/domain/core/error/exception_handler.dart';
 import 'package:weather_ddd_app/infrastructure/core/http/http.dart';
 import 'package:weather_ddd_app/infrastructure/dashboard/repository/weather_repository.dart';
-import 'package:weather_ddd_app/presentation/dashboard/homepage.dart';
 import 'package:weather_ddd_app/presentation/routes/route_observer.dart';
 import 'package:weather_ddd_app/presentation/routes/router.gr.dart';
 import 'package:weather_ddd_app/secrets.dart';
