@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:weather_ddd_app/application/dashboard/weather_bloc.dart';
 import 'package:weather_ddd_app/domain/dashboard/entities/fetched_weather.dart';
 
-var weatherData;
+var weatherData = {};
 
 class Dashboard extends StatefulWidget {
   const Dashboard({Key? key}) : super(key: key);
@@ -19,6 +19,7 @@ class _DashboardState extends State<Dashboard> {
     double screenWidth = MediaQuery.of(context).size.width;
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Colors.blueGrey,
         resizeToAvoidBottomInset: true,
         body: BlocConsumer<WeatherBloc, WeatherState>(
           listenWhen: (previous, current) =>
@@ -72,6 +73,15 @@ class _DashboardState extends State<Dashboard> {
                           ),
                         ),
                       ),
+                      if (weatherData.containsKey("name") &&
+                          weatherData["name"] != null)
+                        Text(
+                          "Weather at ${weatherData["name"]}",
+                          style: const TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 25,
+                              color: Colors.amber),
+                        ),
                       Expanded(
                         child: ListView(
                           children: [
@@ -81,6 +91,7 @@ class _DashboardState extends State<Dashboard> {
                               child: Card(
                                 elevation: 0,
                                 child: Container(
+                                  key: const Key('containerValues'),
                                   width: MediaQuery.of(context).size.width,
                                   padding: const EdgeInsets.all(10),
                                   child: Row(children: [
@@ -90,12 +101,12 @@ class _DashboardState extends State<Dashboard> {
                                     )),
                                     Expanded(
                                       child: Text(
-                                        weatherData != null
+                                        weatherData.containsKey("main")
                                             ? "${weatherData["main"]["temp"]}° c"
                                             : "No Data Available",
                                         textAlign: TextAlign.center,
                                         style: TextStyle(
-                                            color: weatherData != null
+                                            color: weatherData == {}
                                                 ? Colors.blue
                                                 : Colors.red,
                                             fontSize: 20,
@@ -113,6 +124,7 @@ class _DashboardState extends State<Dashboard> {
                               child: Card(
                                 elevation: 0,
                                 child: Container(
+                                  key: const Key('containerValues'),
                                   width: MediaQuery.of(context).size.width,
                                   padding: const EdgeInsets.all(10),
                                   child: Row(children: [
@@ -122,12 +134,12 @@ class _DashboardState extends State<Dashboard> {
                                     )),
                                     Expanded(
                                       child: Text(
-                                        weatherData != null
+                                        weatherData.containsKey("main")
                                             ? "${weatherData["main"]["feels_like"]}° c"
                                             : "No Data Available",
                                         textAlign: TextAlign.center,
                                         style: TextStyle(
-                                            color: weatherData != null
+                                            color: weatherData == {}
                                                 ? Colors.blue
                                                 : Colors.red,
                                             fontSize: 20,
@@ -149,6 +161,7 @@ class _DashboardState extends State<Dashboard> {
                                   Card(
                                     elevation: 0,
                                     child: Container(
+                                      key: const Key('containerValues'),
                                       width: MediaQuery.of(context).size.width /
                                           2.5,
                                       padding: const EdgeInsets.all(10),
@@ -160,12 +173,12 @@ class _DashboardState extends State<Dashboard> {
                                         Expanded(
                                           child: FittedBox(
                                             child: Text(
-                                              weatherData != null
+                                              weatherData.containsKey("main")
                                                   ? "${weatherData["main"]["temp_min"]}° c"
                                                   : "No Data Available",
                                               textAlign: TextAlign.center,
                                               style: TextStyle(
-                                                  color: weatherData != null
+                                                  color: weatherData == {}
                                                       ? Colors.blue
                                                       : Colors.red,
                                                   fontSize: 20,
@@ -180,6 +193,7 @@ class _DashboardState extends State<Dashboard> {
                                   Card(
                                     elevation: 0,
                                     child: Container(
+                                      key: const Key('containerValues'),
                                       width: MediaQuery.of(context).size.width /
                                           2.5,
                                       padding: const EdgeInsets.all(10),
@@ -191,12 +205,12 @@ class _DashboardState extends State<Dashboard> {
                                         Expanded(
                                           child: FittedBox(
                                             child: Text(
-                                              weatherData != null
+                                              weatherData.containsKey("main")
                                                   ? "${weatherData["main"]["temp_max"]}° c"
                                                   : "No Data Available",
                                               textAlign: TextAlign.center,
                                               style: TextStyle(
-                                                  color: weatherData != null
+                                                  color: weatherData == {}
                                                       ? Colors.blue
                                                       : Colors.red,
                                                   fontSize: 20,
@@ -217,6 +231,7 @@ class _DashboardState extends State<Dashboard> {
                               child: Card(
                                 elevation: 0,
                                 child: Container(
+                                  key: const Key('containerValues'),
                                   width: MediaQuery.of(context).size.width,
                                   padding: const EdgeInsets.all(10),
                                   child: Row(children: [
@@ -226,12 +241,12 @@ class _DashboardState extends State<Dashboard> {
                                     )),
                                     Expanded(
                                       child: Text(
-                                        weatherData != null
+                                        weatherData.containsKey("main")
                                             ? "${weatherData["main"]["pressure"]} millibars "
                                             : "No Data Available",
                                         textAlign: TextAlign.center,
                                         style: TextStyle(
-                                            color: weatherData != null
+                                            color: weatherData == {}
                                                 ? Colors.blue
                                                 : Colors.red,
                                             fontSize: 20,
@@ -249,6 +264,7 @@ class _DashboardState extends State<Dashboard> {
                               child: Card(
                                 elevation: 0,
                                 child: Container(
+                                  key: const Key('containerValues'),
                                   width: MediaQuery.of(context).size.width,
                                   padding: const EdgeInsets.all(10),
                                   child: Row(children: [
@@ -258,12 +274,12 @@ class _DashboardState extends State<Dashboard> {
                                     )),
                                     Expanded(
                                       child: Text(
-                                        weatherData != null
+                                        weatherData.containsKey("main")
                                             ? "${weatherData["main"]["humidity"]} g/m3 "
                                             : "No Data Available",
                                         textAlign: TextAlign.center,
                                         style: TextStyle(
-                                            color: weatherData != null
+                                            color: weatherData == {}
                                                 ? Colors.blue
                                                 : Colors.red,
                                             fontSize: 20,
@@ -316,21 +332,33 @@ class _ChangeCityState extends State<ChangeCity> {
         builder: (context, state) {
           return SafeArea(
               child: Container(
+            key: const Key('containerValues'),
             margin: const EdgeInsets.all(10),
             decoration: BoxDecoration(
-              color: Colors.grey.withOpacity(0.1),
+              color: Colors.white,
               borderRadius: BorderRadius.circular(10.0),
             ),
             padding: const EdgeInsets.only(right: 10, left: 10),
             height: 70,
             width: MediaQuery.of(context).size.width,
             child: TextFormField(
+              key: const Key('CityNameField'),
               onChanged: (v) {
                 context
                     .read<WeatherBloc>()
                     .add(WeatherEvent.cityNameChanged(v));
               },
+              validator: (_) =>
+                  context.read<WeatherBloc>().state.city.value.fold(
+                        (f) => f.maybeMap(
+                          empty: (_) => 'City cannot be empty.',
+                          orElse: () => null,
+                        ),
+                        (_) => null,
+                      ),
+              autovalidateMode: AutovalidateMode.onUserInteraction,
               decoration: InputDecoration(
+                errorStyle: const TextStyle(color: Colors.red),
                 label: const Text(
                   "City Name",
                   style: TextStyle(color: Colors.black),
@@ -340,9 +368,10 @@ class _ChangeCityState extends State<ChangeCity> {
                 floatingLabelBehavior: FloatingLabelBehavior.never,
                 border: InputBorder.none,
                 suffix: ElevatedButton(
+                  key: const Key('getWeatherButton'),
                   child: const Text('Get Weather'),
                   onPressed: () {
-                    weatherData = null;
+                    weatherData = {};
                     context
                         .read<WeatherBloc>()
                         .add(const WeatherEvent.searchOnCLick());

@@ -2,7 +2,6 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:weather_ddd_app/domain/core/error/api_failures.dart';
-import 'package:weather_ddd_app/domain/dashboard/entities/fetched_weather.dart';
 import 'package:weather_ddd_app/domain/dashboard/repository/i_dashboard_repository.dart';
 import 'package:weather_ddd_app/domain/dashboard/value/value_objects.dart';
 part 'weather_event.dart';

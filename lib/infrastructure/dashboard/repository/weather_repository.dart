@@ -9,8 +9,8 @@ import 'package:weather_ddd_app/domain/dashboard/value/value_objects.dart';
 import 'package:weather_ddd_app/infrastructure/dashboard/datasource/weather_remote.dart';
 
 class WeatherRepository implements IDashRepository {
-  final WeatherRemoteDataSource weatherRemoteDataSource;
-  WeatherRepository({
+    final WeatherRemoteDataSource weatherRemoteDataSource;
+    WeatherRepository({
     required this.weatherRemoteDataSource,
   });
 
