@@ -35,7 +35,7 @@ class _DashboardState extends State<Dashboard> {
             }, (a) {
               data = a.getOrElse(() => const FetchedWeather(data: {}));
               weatherData = data.data;
-              // print("vivek kr - ${data.data.toString()}");
+              print("vivek kr - ${data.data.toString()}");
             });
             return SizedBox(
               height: screenHeight,
